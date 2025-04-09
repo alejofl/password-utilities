@@ -33,7 +33,7 @@ pnpm add @alejofl/password-utilities
 
 ## Examples of Usage
 
-Generate a strong password with a length of 12 characters:
+Generate a strong password with a length of 12 characters. This will be a strong password, checked with the `isStrongPassword` function:
 
 ```js
 import { generateStrongPassword } from '@alejofl/password-utilities';

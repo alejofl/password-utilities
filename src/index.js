@@ -1,6 +1,6 @@
 export function generateStrongPassword(length = 12) {
     const allowedPasswordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
-    const strongPassword = Array
+    let strongPassword = Array
         .from(
             { length },
             () => {
@@ -9,6 +9,11 @@ export function generateStrongPassword(length = 12) {
                 return randomAllowedPasswordCharacter;
             }
         ).join('');
+
+    while (!isStrongPassword(strongPassword)) {
+        strongPassword = generateStrongPassword(length);
+    }
+
     return strongPassword;
 }
 

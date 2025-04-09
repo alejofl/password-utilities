@@ -10,6 +10,11 @@ describe("generateStrongPassword" , () => {
         const password = generateStrongPassword();
         expect(password).toMatch(/^[^=]+$/);
     });
+
+    it("should generate a password that is strong", () => {
+        const password = generateStrongPassword();
+        expect(isStrongPassword(password)).toBe(true);
+    });
 })
 
 describe("isStrongPassword" , () => {
