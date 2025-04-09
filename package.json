@@ -3,18 +3,38 @@
   "description": "Small, useful JavaScript library that provides password utility functions.",
   "version": "1.0.0",
   "type": "module",
+  "source": "src/index.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	  "build": "microbundle",
+	  "pretest": "npm run build",
+    "test": "jest --coverage",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alejofl/password-utilities.git"
   },
-  "keywords": ["password", "utilities", "strength", "password-generation"],
+  "keywords": [
+    "password",
+    "utilities",
+    "strength",
+    "password-generation"
+  ],
   "author": "Alejo Flores Lucey <alejo@misterflores.com> & Amelia Maier <ame.m2805@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alejofl/password-utilities/issues"
   },
-  "homepage": "https://github.com/alejofl/password-utilities#readme"
+  "homepage": "https://github.com/alejofl/password-utilities#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "microbundle": "^0.15.1"
+  }
 }
