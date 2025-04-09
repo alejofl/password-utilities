@@ -1,4 +1,4 @@
-function generateStrongPassword(length = 12) {
+export function generateStrongPassword(length = 12) {
     const allowedPasswordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
     const strongPassword = Array
         .from(
@@ -12,7 +12,7 @@ function generateStrongPassword(length = 12) {
     return strongPassword;
 }
 
-function isStrongPassword(password) {
+export function isStrongPassword(password) {
     if (password.length < 8) {
         return false;
     }
